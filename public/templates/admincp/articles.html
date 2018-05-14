@@ -1,0 +1,46 @@
+<div>
+    <div class="mb-3 mt-3 row">
+        <div class="col-sm-8"><h2>Articles</h2></div>
+        <div class="col-sm-4"><button class="btn btn-primary float-right" ng-click="addFormToggle()">New article</button></div>
+    </div>
+    <div ng-include src="'templates/admincp/addArticleForm.html'">
+
+        <!-- <span ng-show="errors.category_name.length>0" class="alert-danger">{{ errors.category_name[0].toString()}}</span> -->
+    </div>
+    <span class="has-error" ng-repeat="error in errors">{{ error}}</span>
+    <div ng-include src="'templates/admincp/editArticleForm.html'">
+
+    </div>
+    <table class="table table-responsive table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Content</th>
+           <!--     <th>Article Image</th> -->
+                <th>Category</th>
+                <th>Published by</th>
+                <th>Created at</th>
+                <th>Updated at</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="article in articles">
+                <td>{{ article.id}}</td>
+                <td>{{ article.title}}</td>
+                <td>{{ article.content.substr(0,50) }} ...</td>
+            <!--    <td>{{ article.article_image }}</td> -->
+                <td>{{ article.cName}}</td>
+                <td>{{ article.uName}}</td>
+                <td>{{ article.created_at | date }}</td>
+                <td>{{ article.updated_at | date }}</td>
+                <td><button class="btn btn-success" ng-click="editFormToggle(article)">Edit</button></td>
+                <td>
+                    <button class="btn btn-danger" type="submit" ng-click="deleteArticle(article)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

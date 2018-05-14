@@ -1,0 +1,55 @@
+#content {
+    margin-top: 50px;
+    overflow: auto;
+    margin-bottom: 50px;
+}
+
+.section-title {
+    font-size: 22px;
+}
+
+#categories-list {
+    list-style-type: none;
+    padding-left: 0px!important;
+    text-decoration: underline;
+}
+
+#categories-list a:link {
+    color: #444;
+    font-weight: bold;
+}
+
+#categories-list a:hover {
+    text-decoration: none;
+}
+
+.articles-title a:link {
+    color: #444;
+}
+
+.articles-title a:hover {
+    text-decoration: none;
+}
+
+.articles-description {
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 5px!important;
+}
+
+.articles {
+    margin-bottom: 30px;
+}
+
+.articles-content {
+    margin-top: 5px;
+}
+
+#footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    clear: both;
+}

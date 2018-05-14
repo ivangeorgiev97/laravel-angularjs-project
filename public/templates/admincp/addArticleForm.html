@@ -1,0 +1,19 @@
+<form class='form-horizontal' name='article' ng-show='addFormState' ng-submit='insertArticle(articleInfo)'>
+    <div class='form-group'>
+        <label for='title'>Title:</label>
+        <input class='form-control' type='text' name='title' ng-model='articleInfo.title' required>
+    </div>
+    <div class='form-group'>
+        <label for='content'>Content:</label>
+        <textarea class='form-control' name='content' ng-model='articleInfo.content' required></textarea>
+    </div>
+    <div class='form-group'>
+        <label for='category_id'>Category:</label>
+        <select class="form-control" name='category_id' ng-model='articleInfo.category_id' required>
+            <option ng-repeat="category in categories" value="{{category.id}}">{{category.category_name}}</option>
+        </select>
+    </div>
+    <div class='form-group'>
+        <button class='btn btn-primary' ng-disabled='article.$invalid'>Add</button>
+    </div>
+</form>

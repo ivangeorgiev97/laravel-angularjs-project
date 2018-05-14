@@ -1,0 +1,9 @@
+<form class='form-horizontal' name='category' ng-show='addFormState' ng-submit='insertCategory(categoryInfo)'>
+    <div class='form-group'>
+        <label for='category_name'>Category name:</label>
+        <input class='form-control' type='text' name='category_name' ng-model='categoryInfo.category_name' required>
+    </div>
+    <div class='form-group'>
+        <button class='btn btn-primary' ng-disabled='category.$invalid'>Add</button>
+    </div>
+</form>

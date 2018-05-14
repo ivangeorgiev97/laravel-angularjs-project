@@ -1,0 +1,34 @@
+<div>
+    <div class="mb-3 mt-3 row">
+        <div class="col-sm-8"><h2>Categories</h2></div>
+        <div class="col-sm-4"><button class="btn btn-primary float-right" ng-click="addFormToggle()">New category</button></div>
+    </div>
+    <div ng-include src="'templates/admincp/addCategoryForm.html'">
+     
+    <!-- <span ng-show="errors.category_name.length>0" class="alert-danger">{{ errors.category_name[0].toString()}}</span> -->
+    </div>
+    <span class="has-error" ng-repeat="error in errors">{{ error }}</span>
+    <div ng-include src="'templates/admincp/editCategoryForm.html'">
+
+    </div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="category in categories">
+                <td>{{ category.id}}</td>
+                <td>{{ category.category_name}}</td>
+                <td><button class="btn btn-success" ng-click="editFormToggle(category)">Edit</button></td>
+                <td>
+                    <button class="btn btn-danger" type="submit" ng-click="deleteCategory(category)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
