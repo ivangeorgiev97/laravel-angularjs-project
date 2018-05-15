@@ -83,6 +83,8 @@ Route::post('/signin', function () {
 });
 
 
+Route::post('/contact/send', 'ContactController@sendEmail')->name('contact.send');
+
 
 // AdminCP
 Route::group(['middleware' => ['checkIfAdmin', 'jwt.auth'], 'prefix' => 'admincp'], function() { // 'checkCSRFToken' , 'web'

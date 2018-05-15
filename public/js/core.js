@@ -61,6 +61,10 @@ app.config(function ($routeProvider, $httpProvider, $stateProvider, $urlRouterPr
                 templateUrl: 'templates/restricted.html',
                 controller: 'RestrictedController'
             })
+            .when('/contact', {
+                templateUrl: 'templates/contact.html',
+                controller: 'ContactController'
+            })
 //            .otherwise({
 //                redirectTo: '/'
 //            });
