@@ -41,7 +41,7 @@ Route::group([
     //  'middleware' => 'api',
     'prefix' => 'auth'
         ], function ($router) {
-
+// Todo: Merge AuthenticateController and AuthController 
     Route::post('login', 'AuthenticateController@authenticate')->name('login');
     Route::get('logout', 'AuthController@logout');
     Route::get('refresh', 'AuthController@refresh');
